@@ -366,7 +366,7 @@ export default function App() {
                   <li>Free shipping</li>
                 </ul>
                 <strong data-start="2051" data-end="2074">Better Than Your Ex</strong>
-                " - Because the best revenge smells amazing."
+                - Because the best revenge smells amazing.
 
                 <div className="product-notes">
                   <div className="product-family">
