@@ -120,7 +120,7 @@ export default function App() {
 
       <header className="header header-pill" role="banner">
         <div className="container header-inner header-pill-inner">
-          <a className="brand" href={baseUrl} aria-label="VL Perfume home">
+           <a className="brand" href="#top" aria-label="VL Perfume home">
             <img className="brand-logo" src={logo} alt="VL logo" />
           </a>
 
