@@ -33,7 +33,6 @@ const COUNTRIES = [
   { code: "HN", name: "Honduras", currency: "HNL", symbol: "L" },
   { code: "HK", name: "Hong Kong SAR", currency: "HKD", symbol: "$" },
   { code: "IE", name: "Ireland", currency: "EUR", symbol: "€" },
-  { code: "IL", name: "Israel", currency: "ILS", symbol: "₪" },
   { code: "IT", name: "Italy", currency: "EUR", symbol: "€" },
   { code: "JP", name: "Japan", currency: "JPY", symbol: "¥" },
   { code: "MY", name: "Malaysia", currency: "MYR", symbol: "RM" },
