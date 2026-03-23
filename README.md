@@ -1,6 +1,6 @@
 # VL - Perfume (React)
 
-This is a React + Vite recreation of [`https://vyvo.life/`](https://vyvo.life/) with a procedural 3D animated perfume bottle (Three.js).
+This is a React + Vite recreation of [`https://vyvo.life/`](https://vyvo.life/) 
 
 ## Preview locally
 
