@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import logo from "./assets/logo.png";
 import bottleFront from "./assets/bottle_front.png";
 
@@ -61,7 +61,7 @@ export default function App() {
   );
   const [rates, setRates] = useState({ USD: 1 });
   const [atTop, setAtTop] = useState(true);
-
+  const currencyWrapRef = useRef(null);
   useEffect(() => {
     const onScroll = () => {
       setAtTop(window.scrollY <= 8);
@@ -86,7 +86,27 @@ export default function App() {
       mounted = false;
     };
   }, []);
-
+  useEffect(() => {
+    if (!currencyOpen) return;
+    const handlePointerDown = (event) => {
+      const target = event.target;
+      if (currencyWrapRef.current && !currencyWrapRef.current.contains(target)) {
+        setCurrencyOpen(false);
+      }
+    };
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setCurrencyOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [currencyOpen]);
+  
   const filteredCountries = useMemo(() => {
     const q = currencyQuery.trim().toLowerCase();
     if (!q) return COUNTRIES;
@@ -147,7 +167,7 @@ export default function App() {
           </nav>
 
           <div className="header-actions" aria-label="Header actions">
-            <div className="currency-wrap">
+            <div className="currency-wrap" ref{currencyWrapRef}>
               <button
                 className="currency"
                 type="button"
