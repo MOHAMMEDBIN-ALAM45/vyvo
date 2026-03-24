@@ -167,7 +167,7 @@ export default function App() {
           </nav>
 
           <div className="header-actions" aria-label="Header actions">
-            <div className="currency-wrap" ref{currencyWrapRef}>
+            <div className="currency-wrap" ref={currencyWrapRef}>
               <button
                 className="currency"
                 type="button"
